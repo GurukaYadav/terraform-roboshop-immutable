@@ -77,19 +77,19 @@ module "rabbitmq" {
   PRIVATE_HOSTED_ZONE_ID = var.PRIVATE_HOSTED_ZONE_ID
 }
 
-#module "lb" {
-#  source = "github.com/GurukaYadav/tf-module-mutable-lb"
-#  VPC_ID = module.vpc.VPC_ID
-#  PUB_PORT = var.PUB_PORT
-#  PRI_PORT = var.PRI_PORT
-#  PRIVATE_SUBNET_CIDR = var.PRIVATE_SUBNET_CIDR
-#  PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
-#  PUBLIC_SUBNET_ID = module.vpc.PUBLIC_SUBNET_ID
-#  PROJECT = var.PROJECT
-#  ENV = var.ENV
-#  PUBLIC_HOSTED_ZONE_ID = var.PUBLIC_HOSTED_ZONE_ID
-#
-#}
+module "lb" {
+  source = "github.com/GurukaYadav/tf-module-mutable-lb"
+  VPC_ID = module.vpc.VPC_ID
+  PUB_PORT = var.PUB_PORT
+  PRI_PORT = var.PRI_PORT
+  PRIVATE_SUBNET_CIDR = var.PRIVATE_SUBNET_CIDR
+  PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
+  PUBLIC_SUBNET_ID = module.vpc.PUBLIC_SUBNET_ID
+  PROJECT = var.PROJECT
+  ENV = var.ENV
+  PUBLIC_HOSTED_ZONE_ID = var.PUBLIC_HOSTED_ZONE_ID
+
+}
 
 module "FRONTEND" {
 #  depends_on = [module.CART,module.CATALOGUE,module.USER,module.SHIPPING,module.PAYMENT,module.DISPATCH]
@@ -101,17 +101,17 @@ module "FRONTEND" {
   SSH_PORT = var.SSH_PORT
   WORKSTATION_IP = var.WORKSTATION
   COMPONENT = "frontend"
-#  PROJECT = var.PROJECT
+  PROJECT = var.PROJECT
   ENV = var.ENV
   PRIVATE_SUBNET_CIDR = concat(module.vpc.PUBLIC_SUBNET_CIDR, module.vpc.PRIVATE_SUBNET_CIDR)
   AGS_DESIRED = var.INSTANCE["FRONTEND"]["AGS_DESIRED"]
   AGS_MAX = var.INSTANCE["FRONTEND"]["AGS_MAX"]
   AGS_MIN = var.INSTANCE["FRONTEND"]["AGS_MIN"]
-#  LB_ARN = module.lb.PUBLIC_LB_ARN
-#  LB_TYPE = "public"
-#  PRIVATE_HOSTED_ZONE_ID = var.PRIVATE_HOSTED_ZONE_ID
-#  PRIVATE_LB_DNS_NAME = module.lb.PRIVATE_LB_DNS_NAME
-#  PRIVATE_LISTENER_ARN = module.lb.PRIVATE_LISTENER_ARN
+  LB_ARN = module.lb.PUBLIC_LB_ARN
+  LB_TYPE = "public"
+  PRIVATE_HOSTED_ZONE_ID = var.PRIVATE_HOSTED_ZONE_ID
+  PRIVATE_LB_DNS_NAME = module.lb.PRIVATE_LB_DNS_NAME
+  PRIVATE_LISTENER_ARN = module.lb.PRIVATE_LISTENER_ARN
   PROMETHEUS_IP = var.PROMETHEUS
   APP_VERSION = "2.0.0"
 
