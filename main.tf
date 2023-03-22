@@ -119,7 +119,7 @@ module "FRONTEND" {
 }
 
 module "CART" {
-  source = "github.com/GurukaYadav/tf-module-mutable-app"
+  source = "github.com/GurukaYadav/tf-module-immutable-app"
   INSTANCE_TYPE = var.INSTANCE["CART"]["INSTANCE_TYPE"]
   PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
   PORT = "8080"
@@ -146,7 +146,7 @@ module "CART" {
 }
 
 module "CATALOGUE" {
-  source = "github.com/GurukaYadav/tf-module-mutable-app"
+  source = "github.com/GurukaYadav/tf-module-immutable-app"
   INSTANCE_TYPE = var.INSTANCE["CATALOGUE"]["INSTANCE_TYPE"]
   PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
   PORT = "8080"
@@ -172,7 +172,7 @@ module "CATALOGUE" {
 }
 
 module "USER" {
-  source = "github.com/GurukaYadav/tf-module-mutable-app"
+  source = "github.com/GurukaYadav/tf-module-immutable-app"
   INSTANCE_TYPE = var.INSTANCE["USER"]["INSTANCE_TYPE"]
   PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
   PORT = "8080"
@@ -199,7 +199,7 @@ module "USER" {
 }
 
 module "SHIPPING" {
-  source = "github.com/GurukaYadav/tf-module-mutable-app"
+  source = "github.com/GurukaYadav/tf-module-immutable-app"
   INSTANCE_TYPE = var.INSTANCE["SHIPPING"]["INSTANCE_TYPE"]
   PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
   PORT = "8080"
@@ -225,7 +225,7 @@ module "SHIPPING" {
 }
 
 module "PAYMENT" {
-  source = "github.com/GurukaYadav/tf-module-mutable-app"
+  source = "github.com/GurukaYadav/tf-module-immutable-app"
   INSTANCE_TYPE = var.INSTANCE["PAYMENT"]["INSTANCE_TYPE"]
   PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
   PORT = "8080"
@@ -250,7 +250,7 @@ module "PAYMENT" {
 }
 
 module "DISPATCH" {
-  source = "github.com/GurukaYadav/tf-module-mutable-app"
+  source = "github.com/GurukaYadav/tf-module-immutable-app"
   INSTANCE_TYPE = var.INSTANCE["DISPATCH"]["INSTANCE_TYPE"]
   PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
   PORT = "8080"
