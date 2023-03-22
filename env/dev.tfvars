@@ -58,32 +58,46 @@ PRI_PORT = "80"
 //INSTANCE_COUNT
 INSTANCE = {
   FRONTEND = {
-    COUNT = 1
+    AGS_DESIRED = 1
+    AGS_MAX = 1
+    AGS_MIN = 1
     INSTANCE_TYPE = "t3.micro"
   }
   CART = {
-    COUNT = 1
+    AGS_DESIRED = 1
+    AGS_MAX = 1
+    AGS_MIN = 1
     INSTANCE_TYPE = "t3.micro"
 
   }
   CATALOGUE = {
-    COUNT = 1
+    AGS_DESIRED = 1
+    AGS_MAX = 1
+    AGS_MIN = 1
     INSTANCE_TYPE = "t3.micro"
   }
   USER = {
-    COUNT = 1
+    AGS_DESIRED = 1
+    AGS_MAX = 1
+    AGS_MIN = 1
     INSTANCE_TYPE = "t3.micro"
   }
   SHIPPING = {
-    COUNT = 1
+    AGS_DESIRED = 1
+    AGS_MAX = 1
+    AGS_MIN = 1
     INSTANCE_TYPE = "t3.medium"
   }
   PAYMENT = {
-    COUNT = 1
+    AGS_DESIRED = 1
+    AGS_MAX = 1
+    AGS_MIN = 1
     INSTANCE_TYPE = "t3.micro"
   }
   DISPATCH = {
-    COUNT = 1
+    AGS_DESIRED = 1
+    AGS_MAX = 1
+    AGS_MIN = 1
     INSTANCE_TYPE = "t3.micro"
   }
 }

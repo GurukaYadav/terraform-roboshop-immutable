@@ -91,30 +91,33 @@ module "rabbitmq" {
 #
 #}
 
-#module "FRONTEND" {
-##  depends_on = [module.CART,module.CATALOGUE,module.USER,module.SHIPPING,module.PAYMENT,module.DISPATCH]
-#  source = "github.com/GurukaYadav/tf-module-mutable-app"
-#  INSTANCE_TYPE = var.INSTANCE["FRONTEND"]["INSTANCE_TYPE"]
-#  PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
-#  PORT = "80"
-#  VPC_ID = module.vpc.VPC_ID
-#  SSH_PORT = var.SSH_PORT
-#  WORKSTATION_IP = var.WORKSTATION
-#  COMPONENT = "frontend"
-#  PROJECT = var.PROJECT
-#  ENV = var.ENV
-#  PRIVATE_SUBNET_CIDR = concat(module.vpc.PUBLIC_SUBNET_CIDR, module.vpc.PRIVATE_SUBNET_CIDR)
-#  INSTANCE_COUNT = var.INSTANCE["FRONTEND"]["COUNT"]
-#  LB_ARN = module.lb.PUBLIC_LB_ARN
-#  LB_TYPE = "public"
-#  PRIVATE_HOSTED_ZONE_ID = var.PRIVATE_HOSTED_ZONE_ID
-#  PRIVATE_LB_DNS_NAME = module.lb.PRIVATE_LB_DNS_NAME
-#  PRIVATE_LISTENER_ARN = module.lb.PRIVATE_LISTENER_ARN
-#  PROMETHEUS_IP = var.PROMETHEUS
-#
-#
-#}
-#
+module "FRONTEND" {
+#  depends_on = [module.CART,module.CATALOGUE,module.USER,module.SHIPPING,module.PAYMENT,module.DISPATCH]
+  source = "github.com/GurukaYadav/tf-module-mutable-app"
+  INSTANCE_TYPE = var.INSTANCE["FRONTEND"]["INSTANCE_TYPE"]
+  PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
+  PORT = "80"
+  VPC_ID = module.vpc.VPC_ID
+  SSH_PORT = var.SSH_PORT
+  WORKSTATION_IP = var.WORKSTATION
+  COMPONENT = "frontend"
+  PROJECT = var.PROJECT
+  ENV = var.ENV
+  PRIVATE_SUBNET_CIDR = concat(module.vpc.PUBLIC_SUBNET_CIDR, module.vpc.PRIVATE_SUBNET_CIDR)
+  DESIRED = var.INSTANCE["FRONTEND"]["AGS_DESIRED"]
+  MAX = var.INSTANCE["FRONTEND"]["AGS_MAX"]
+  MIN = var.INSTANCE["FRONTEND"]["AGS_MIN"]
+  LB_ARN = module.lb.PUBLIC_LB_ARN
+  LB_TYPE = "public"
+  PRIVATE_HOSTED_ZONE_ID = var.PRIVATE_HOSTED_ZONE_ID
+  PRIVATE_LB_DNS_NAME = module.lb.PRIVATE_LB_DNS_NAME
+  PRIVATE_LISTENER_ARN = module.lb.PRIVATE_LISTENER_ARN
+  PROMETHEUS_IP = var.PROMETHEUS
+  APP_VERSION = "2.0.0"
+
+
+}
+
 #module "CART" {
 #  source = "github.com/GurukaYadav/tf-module-mutable-app"
 #  INSTANCE_TYPE = var.INSTANCE["CART"]["INSTANCE_TYPE"]
