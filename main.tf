@@ -92,7 +92,7 @@ module "lb" {
 }
 
 module "FRONTEND" {
-#  depends_on = [module.CART,module.CATALOGUE,module.USER,module.SHIPPING,module.PAYMENT,module.DISPATCH]
+  depends_on = [module.CART,module.CATALOGUE,module.USER,module.SHIPPING,module.PAYMENT,module.DISPATCH]
   source = "github.com/GurukaYadav/tf-module-immutable-app"
   INSTANCE_TYPE = var.INSTANCE["FRONTEND"]["INSTANCE_TYPE"]
   PRIVATE_SUBNET_ID = module.vpc.PRIVATE_SUBNET_ID
