@@ -82,7 +82,7 @@ INSTANCE = {
   SHIPPING = {
     AGS_DESIRED = 3
     AGS_MAX = 5
-    AGS_MIN = 2
+    AGS_MIN = 3
     INSTANCE_TYPE = "t3.medium"
   }
   PAYMENT = {
