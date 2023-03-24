@@ -52,38 +52,85 @@ PRI_PORT = "80"
 
 
 
-
-
-
 //INSTANCE_COUNT
 INSTANCE = {
   FRONTEND = {
-    COUNT = 2
+    AGS_DESIRED = 2
+    AGS_MAX = 5
+    AGS_MIN = 2
     INSTANCE_TYPE = "t3.micro"
   }
   CART = {
-    COUNT = 2
+    AGS_DESIRED = 2
+    AGS_MAX = 5
+    AGS_MIN = 2
     INSTANCE_TYPE = "t3.micro"
 
   }
   CATALOGUE = {
-    COUNT = 2
+    AGS_DESIRED = 2
+    AGS_MAX = 5
+    AGS_MIN = 2
     INSTANCE_TYPE = "t3.micro"
   }
   USER = {
-    COUNT = 2
+    AGS_DESIRED = 2
+    AGS_MAX = 5
+    AGS_MIN = 2
     INSTANCE_TYPE = "t3.micro"
   }
   SHIPPING = {
-    COUNT = 3
+    AGS_DESIRED = 3
+    AGS_MAX = 5
+    AGS_MIN = 2
     INSTANCE_TYPE = "t3.medium"
   }
   PAYMENT = {
-    COUNT = 2
+    AGS_DESIRED = 2
+    AGS_MAX = 5
+    AGS_MIN = 2
     INSTANCE_TYPE = "t3.micro"
   }
   DISPATCH = {
-    COUNT = 2
+    AGS_DESIRED = 2
+    AGS_MAX = 5
+    AGS_MIN = 2
     INSTANCE_TYPE = "t3.micro"
   }
 }
+
+
+
+#
+#//INSTANCE_COUNT
+#INSTANCE = {
+#  FRONTEND = {
+#    COUNT = 2
+#    INSTANCE_TYPE = "t3.micro"
+#  }
+#  CART = {
+#    COUNT = 2
+#    INSTANCE_TYPE = "t3.micro"
+#
+#  }
+#  CATALOGUE = {
+#    COUNT = 2
+#    INSTANCE_TYPE = "t3.micro"
+#  }
+#  USER = {
+#    COUNT = 2
+#    INSTANCE_TYPE = "t3.micro"
+#  }
+#  SHIPPING = {
+#    COUNT = 3
+#    INSTANCE_TYPE = "t3.medium"
+#  }
+#  PAYMENT = {
+#    COUNT = 2
+#    INSTANCE_TYPE = "t3.micro"
+#  }
+#  DISPATCH = {
+#    COUNT = 2
+#    INSTANCE_TYPE = "t3.micro"
+#  }
+#}
